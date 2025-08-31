@@ -52,8 +52,5 @@ def advice():
     return jsonify({"message": result})
 
 if __name__ == "__main__":
-     # Local test on port 9500
-#      app.run(host="0.0.0.0", port=9500)
-    # Bind to 0.0.0.0 and pick dynamic port from environment (for Render)
-     port = int(os.environ.get("PORT", 9500))  # Use 9500 if PORT not set
-     app.run(host="0.0.0.0", port=port)
+    port = int(os.environ.get("PORT", 9500))
+    app.run(host="0.0.0.0", port=port)
