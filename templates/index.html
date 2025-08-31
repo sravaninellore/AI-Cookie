@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🥠 AI Daily Mentor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container" role="main">
+    <h1>🥠 AI Daily Mentor</h1>
+    <p class="intro">Crack a cookie to get a daily tip, tech trend, or advice!</p>
+
+    <div class="controls">
+        <!-- Cookie type selector -->
+        <label for="category" class="visually-hidden">Select Cookie Category</label>
+        <select id="category" aria-label="Select Cookie Category">
+            <option value="">-- Select a Cookie --</option>
+            <option value="Fortune Cookie">🍪 Fortune Cookie</option>
+            <option value="Decision Helper">💡 Decision Helper</option>
+            <option value="Daily Mentor">🌅 Daily Mentor</option>
+            <option value="Tech Trends">🔧 Tech Trends</option>
+            <option value="Positive Nudges">💖 Positive Nudges</option>
+        </select>
+
+        <!-- User question input -->
+        <input type="text" id="userQuestion" placeholder="No question needed for this cookie" aria-label="Your question">
+
+        <!-- Crack the Cookie button -->
+        <button id="getAdvice" aria-busy="false">
+            <span id="btnText">Crack the Cookie!</span>
+            <span class="loader" id="loader" hidden></span>
+        </button>
+    </div>
+
+    <div class="result-container" aria-live="polite">
+        <div id="cookieIcon" class="cookie-icon" tabindex="0" role="button" aria-label="Crack the Cookie">🥠</div>
+        <h2>Fresh Advice:</h2>
+        <div id="resultText">🍪 Crack a cookie to see your daily tip!</div>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

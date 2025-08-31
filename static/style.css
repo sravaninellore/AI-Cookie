@@ -1,0 +1,204 @@
+html {
+    min-height: 100%;
+}
+body {
+    background: linear-gradient(135deg, #fffbe5 0%, #ffd580 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.container {
+    background: #fffdf7;
+    padding: 40px 24px;
+    border-radius: 22px;
+    box-shadow: 0 0 32px rgba(0, 0, 0, 0.12);
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: #ff7a4e;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+.intro {
+    color: #6f4f2b;
+    margin-bottom: 25px;
+    letter-spacing: 0.01em;
+    font-size: 1.08rem;
+}
+.result-container h2 {
+    color: #ff7a4e;
+    margin-bottom: 12px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    background: #fff8e1;
+    border-radius: 16px;
+    padding: 20px 14px;
+    box-shadow: 0 4px 18px rgba(255,170,66,0.07);
+    margin-bottom: 25px;
+}
+
+.controls select,
+.controls input,
+.controls button {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+.controls select,
+.controls input {
+    border: 1.5px solid #ffe58f;
+    background: #fffbe8;
+    padding: 13px 16px;
+    font-size: 1.08rem;
+    transition: border 0.2s;
+}
+.controls select:focus,
+.controls input:focus {
+    border: 2px solid #ffae42;
+    outline: none;
+}
+.controls input {
+    margin: 0;
+}
+
+.controls button {
+    background: linear-gradient(90deg, #ff7a4e 0%, #ffae42 100%);
+    color: white;
+    font-size: 1.18em;
+    font-weight: 600;
+    border: none;
+    padding: 14px 8px;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(255,170,66,0.10);
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7em;
+    transition: background 0.17s;
+}
+.controls button:disabled {
+    background: #ffd7ad;
+    color: #fff8e1;
+    cursor: not-allowed;
+}
+
+.result-container {
+    margin-top: 30px;
+    padding: 24px;
+    background: #fff4d8;
+    border-radius: 17px;
+    border: 1.5px dashed #ffd580;
+    box-shadow: 0 1px 8px rgba(255, 170, 66, 0.10);
+}
+
+#resultText {
+    font-size: 1.18rem;
+    color: #352e23;
+    min-height: 42px;
+    margin-bottom: 0;
+    word-break: break-word;
+    transition: background 0.4s;
+    text-align: left;
+}
+
+#resultText h3,
+#resultText h4 {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    color: #ff7a4e;
+    font-weight: 600;
+}
+#resultText ul {
+    text-align: left;
+    margin-left: 1.5em;
+    margin-bottom: 0.9em;
+}
+#resultText p,
+#resultText ul,
+#resultText li {
+    font-size: 1.01em;
+    margin-bottom: 10px;
+}
+#resultText blockquote {
+    font-style: italic;
+    border-left: 4px solid #ffd580;
+    margin: 14px 0;
+    padding-left: 12px;
+    color: #b07f2c;
+}
+
+#cookieIcon {
+    font-size: 3.7rem;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.31s cubic-bezier(0.7, -0.6, 0.4, 1.5);
+    outline: none;
+}
+.cookie-icon.crack {
+    transform: rotate(-17deg) scale(1.15);
+}
+
+.loader {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 3px solid #fff;
+    border-top: 3px solid #ff7a4e;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        padding: 15px 4vw;
+    }
+    .result-container {
+        padding: 10px;
+    }
+    .controls {
+        padding: 11px 2vw;
+        gap: 10px;
+    }
+    .controls select,
+    .controls input {
+        font-size: 0.95rem;
+    }
+    h1 {
+        font-size: 1.35em;
+    }
+}
